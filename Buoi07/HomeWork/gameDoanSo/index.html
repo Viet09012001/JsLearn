@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let computerNumber = (Math.random() * 10);
+let numberTurns = 0;
+let alreadyWon = false;
+let userNumber;
+while (userNumber != computerNumber && numberTurns < 3){
+    numberTurns++;
+    let userNumber = +prompt("Turn"+ numberTurns + "Đoán thử xem");
+    if (userNumber == computerNumber){
+        alert("Đoán đúng rồi đó!");
+        alreadyWon = true;
+    }else if (userNumber < computerNumber) {
+        alert("Số bạn đoán thấp hơn số của máy");
+    }else if (userNumber > computerNumber) {
+        alert("Số bạn đoán cao hơn số máy");
+    }else {
+        alert("Sai rồi");
+    }
+}
+if (alreadyWon == true) {
+    alert("Chúc mùng bạn đã thắng")
+}else if (alreadyWon == false) {
+    alert("Xin chia buồn cùng gia quyến")
+}
+</script>
+</html>

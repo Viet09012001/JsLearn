@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="tienGui"> :Số tiền <br><br>
+    <input type="number" id="thangGui"> :Tháng gửi. <br><br>
+    <button onclick="laiThuong()">Lãi thường</button>
+    <button onclick="laiKep()">Lãi kép</button><br><br>
+    <h2 id="laiThuong" style="color: blue;"></h2>
+    <h2 id="laiKep" style="color: blue;"></h2>
+
+</body>
+<script>
+    function laiThuong(){
+        let soTienGui = +document.getElementById("tienGui").value;
+        let soThangGui = +document.getElementById("thangGui").value;
+        let laiSuat;
+        if (soThangGui < 12) {
+            laiSuat = 0.065
+        } else if (soThangGui < 24) {
+            laiSuat = 0.08
+        } else {
+            laiSuat = 0.0965
+        }
+        let soTienNhanDuoc = soTienGui + laiSuat * soThangGui * soTienGui
+        let soTienLai = soTienNhanDuoc - soTienGui
+        document.getElementById("laiThuong").innerText = "Số tiền nhận được là: " + soTienNhanDuoc + "\nSố tiền lãi là: " + soTienLai
+    }
+    function laiKep() {
+        let soTienGui = +document.getElementById("tienGui").value
+        let soThangGui = +document.getElementById("thangGui").value
+        let soTienGui1 = soTienGui
+        let LaiSuat
+        if (soThangGui < 12) {
+            laiSuat = 0.065
+        } else if (soThangGui < 24) {
+            laiSuat = 0.08
+        } else {
+            laiSuat = 0.0965
+        }
+        for (let i = 0; i < soThangGui; i++) {
+            soTienGui = soTienGui + laiSuat * soTienGui
+        }
+        let soTienLai = soTienGui - soTienGui1
+        document.getElementById("laiThuong").innerText = "Số tiền nhận được là: " + soTienGui + "\nSố tiền lãi là: " + soTienLai
+    }
+</script>
+</html>
