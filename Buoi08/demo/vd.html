@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function soNguyen(number){
+        if(number < 2)
+            return false;
+        for( let i = 2; i <= Math.sqrt(number); i++ ){
+            if(number % 2 === 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function nhapSo(){
+        let arr = [];
+        for( let i = 0; i < 10; i++ ){
+            let num = +prompt("Nhập số thứ" + (i + 1) +": ");
+            arr.push(num);
+        }
+        return arr;
+    }
+
+    function inSoNguyen(arr){
+        console.log("Các số nguyên trong mảng là: ");
+        for(let i = 0; i < arr.length; i++){
+            if(soNguyen(arr[i])){
+                console.log(arr[i]);
+            }
+        }
+    }
+
+    let myArray = nhapSo();
+    inSoNguyen(myArray);
+</script>
+
+</html>
