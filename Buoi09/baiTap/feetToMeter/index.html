@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function feetToMeters(feet) {
+        let meters = feet * 0.305;
+        return meters;
+    }
+
+    function metersToFeet(meters) {
+        let feet = meters / 0.305;
+        return feet;
+    }
+
+    function convertUnits() {
+        let inputValue = +prompt("Nhập giá trị:");
+
+        if (isNaN(inputValue)) {
+            alert("vui lòng nhập số hợp lệ: ");
+            return;
+        }
+
+        let unitChoice = prompt("Chọn đơn vị (feet or meters):");
+
+        if (unitChoice === "feet") {
+            let metersResult = feetToMeters(inputValue);
+            alert(`${inputValue} feet bằng ${metersResult.toFixed(2)} mét.`);
+        } else if (unitChoice === "meters") {
+            const feetResult = metersToFeet(inputValue);
+            alert(`${inputValue} mét bằng ${feetResult.toFixed(2)} feet.`);
+        } else {
+            alert("Đơn vị không hợp lệ. Chọn giữa 'feet' hoặc 'meters'.");
+        }
+    }
+
+    // Gọi hàm chuyển đổi
+    convertUnits();
+</script>
+
+</html>
