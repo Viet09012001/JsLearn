@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class cat{
+        constructor(name, weights){
+            this.name = name;
+            this.weights = weights;
+        }
+        eat(food){
+            this.weights += 2 * food;
+        }
+        getInfo(){
+            alert("Cat name:" + this.name + "," + "cat weights:" + this.weights);
+        }
+    }
+
+    let cat1 = new cat('Méo', 10);
+    cat1.eat(2);
+    cat1.getInfo();
+</script>
+</html>

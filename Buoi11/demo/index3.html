@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Tính hình tròng
+
+    class circle{
+        constructor(x){
+            this.radious = x;
+        }
+        
+        chuVi(){
+            let cv = 2 * Math.PI * this.radious;
+            alert("chu vi hình trong là: " + cv);
+        }
+        dienTich(){
+            let s = Math.PI * Math.pow(this.radious, 2);
+            alert("Diện tích hình tròn là: " + s)
+        }
+    }
+
+    let cal = new circle(10);
+    cal.chuVi();
+    cal.dienTich();
+</script>
+</html>

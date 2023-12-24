@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Tạo 1 lớp
+    class product{
+        constructor(x, y, z){
+            this.ten = x;
+            this.gia = y;
+            this.sl = z;
+        }
+        getInfo(){
+            alert(this.ten + ";" + this.gia + ";" + this.sl);
+        }
+    }
+    let product1 = new product('A', 200, 20);
+    alert(product1.ten);
+    let product2 = new product('B', 2000, 10);
+    alert(product2.gia);
+
+    product2.getInfo();
+</script>
+</html>
